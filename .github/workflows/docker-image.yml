@@ -19,3 +19,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: ${{ secrets.DOCKERHUB_REPO }}
+          tags: ${{ secrets.DOCKERHUB_REPO }}:latest
