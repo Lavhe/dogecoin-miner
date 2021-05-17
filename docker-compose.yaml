@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  dogecoin-miner:
+    build: .
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+      - URL=${URL}
