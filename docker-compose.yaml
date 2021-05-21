@@ -2,6 +2,7 @@ version: "3.7"
 services:
   dogecoin-miner:
     build: .
+    restart: always
     environment:
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
