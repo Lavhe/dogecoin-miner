@@ -1,0 +1,15 @@
+FROM ubuntu:20.04
+
+RUN apt-get update
+RUN apt-get install -y \
+   wget \
+   htop \
+   tar \
+   rsyslog
+
+RUN wget -O /opt/xmrig.tar.gz https://github.com/xmrig/xmrig/releases/download/v6.12.2/xmrig-6.12.2-linux-x64.tar.gz
+RUN tar xfz /opt/xmrig.tar.gz -C /opt/
+RUN mv /opt/xmrig-6.12.2/* /opt/
+
+
+CMD ["/bin/bash","-c","echo '\n\n ***   USE AT YOUR OWN RISK    ***\n\n' && /opt/xmrig --url=$URL --user=$USERNAME --pass=$PASSWORD --verbose --health-print-time=120"]

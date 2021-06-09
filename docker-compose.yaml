@@ -7,3 +7,12 @@ services:
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
       - URL=${URL}
+  dogecoin-miner-xmrig:
+    build:
+      context: .
+      dockerfile: Dockerfile.xmrig
+    restart: always
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+      - URL=${URL}
