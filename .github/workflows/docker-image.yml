@@ -20,3 +20,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: ${{ secrets.DOCKERHUB_REPO }}
           tags: latest
+    
+      - name: Push XMRIG version to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          file: Dockerfile.xmrig
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: ${{ secrets.DOCKERHUB_REPO }}
+          tags: xmrig
